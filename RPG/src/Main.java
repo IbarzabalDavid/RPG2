@@ -8,6 +8,10 @@ public class Main {
 
         int choix=0;
         boolean ok=false;
+        int tour=0;
+        int dommage=0;
+        int avant=0;
+        boolean gameOver=false;
         Personnage[] tabJoueur= new Personnage[2];
         Scanner sc =new Scanner(System.in);
 
@@ -43,6 +47,9 @@ public class Main {
             ok=false;
         }
 
+        while (!gameOver){
+
+        }
 
 
 

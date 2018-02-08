@@ -1,7 +1,11 @@
+package sort;
+
+import personnage.Personnage;
+
 /**
  * Created by ibada1731710 on 2018-02-05.
  */
-public class PicDeGlace extends Sort{
+public class PicDeGlace extends Sort {
     int avant;
 
     public PicDeGlace() {

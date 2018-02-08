@@ -1,3 +1,7 @@
+package sort;
+
+import personnage.Personnage;
+
 /**
  * Created by ibada1731710 on 2018-02-05.
  */

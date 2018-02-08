@@ -20,14 +20,17 @@ public class Magicien extends Personnage {
 
     public void attaquer(Personnage personnage){
         random=(int)(Math.random()*2);
+        System.out.println("Le "+getNom()+" attaque !");
+        System.out.println("Le "+getNom()+" utilise le sort "+tabSort[random].getNom()+", ce qui lui coute "+tabSort[random].getCout()+" points de magie.");
+
+
         if ( tabSort[random].getCout()<=ptsMagie){
             ptsMagie-=tabSort[random].getCout();
+            System.out.println("Il lui reste "+(getPtsMagie()+" points de magie."));
             tabSort[random].lancerSort(personnage);
-
-
         }
         else {
-            System.out.println("Vous n'avez pas assez de points de Magie");
+            System.out.println("Le personnage n'a pas assez de points de Magie"+System.lineSeparator());
         }
 
     }

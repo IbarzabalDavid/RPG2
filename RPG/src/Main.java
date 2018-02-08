@@ -46,33 +46,21 @@ public class Main {
             }
             ok=false;
         }
-
         while (!gameOver){
-
-            System.out.println("Le "+tabJoueur[tour%2].getNom()+" attaque !");
-            avant=tabJoueur[(tour+1)%2].getPtsVie();
             tabJoueur[tour%2].attaquer(tabJoueur[(tour+1)%2]);
-            dommage=tabJoueur[(tour+1)%2].getPtsVie()-avant;
-
             //Verif mort
-            if (tabJoueur[(tour+1)%2].getPtsVie()<=0){
-                tabJoueur[(tour+1)%2].setPtsVie(0);
+            if (tabJoueur[(tour+1)%2].getPtsVie()==0){
                 gameOver=true;
-
             }
-
-
-            System.out.println("Le "+tabJoueur[(tour+1)%2].getNom()+" perd" +(dommage)+" points de vie. Il lui en reste "+tabJoueur[(tour+1)%2].getPtsVie()+System.lineSeparator());
-
 
             if (gameOver){
                 System.out.println("Le "+tabJoueur[(tour+1)%2].getNom()+" est mort. Le "+tabJoueur[tour%2].getNom()+" a gagné !");
             }
+            if (tabJoueur[0] instanceof Magicien && tabJoueur[1] instanceof Magicien && ((Magicien)tabJoueur[0]).getPtsMagie()<2 && ((Magicien)tabJoueur[1]).getPtsMagie()<2 ){
+                System.out.println("Les magiciens n'ont plus de points de magie, partie nulle !");
+                gameOver=true;
+            }
             tour++;
         }
-
-
-
-
     }
 }

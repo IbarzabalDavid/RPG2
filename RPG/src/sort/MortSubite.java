@@ -1,5 +1,6 @@
 package sort;
 
+import personnage.Magicien;
 import personnage.Personnage;
 
 /**
@@ -11,7 +12,7 @@ public class MortSubite extends Sort {
         setCout(10);
         setNom("Mort Subite");
     }
-    public void lancerSort(Personnage personnage){
+    public void lancerSort(Personnage personnage, Magicien magicien){
         if ((int)((Math.random()*10)+1)==1){
             avant=personnage.getPtsVie();
             personnage.setPtsVie(0);

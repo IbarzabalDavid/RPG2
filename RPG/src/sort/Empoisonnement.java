@@ -1,5 +1,6 @@
 package sort;
 
+import personnage.Magicien;
 import personnage.Personnage;
 
 /**
@@ -12,9 +13,9 @@ public class Empoisonnement extends Sort {
         setCout(2);
         setNom("Empoissonnement");
     }
-    public void lancerSort(Personnage personnage){
+    public void lancerSort(Personnage personnage, Magicien magicien){
         avant=personnage.getPtsVie();
-        personnage.setPtsVie(personnage.getPtsVie()-(2*dommage));
+        personnage.setPtsVie(personnage.getPtsVie()-(2*dommage)- magicien.getDegat());
         System.out.println("Le "+personnage.getNom()+" perd "+(avant-personnage.getPtsVie())+" points de vie. Il lui en reste "+personnage.getPtsVie()+"."+System.lineSeparator());
         dommage++;
     }

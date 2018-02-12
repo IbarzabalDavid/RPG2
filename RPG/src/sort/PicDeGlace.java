@@ -1,5 +1,6 @@
 package sort;
 
+import personnage.Magicien;
 import personnage.Personnage;
 
 /**
@@ -13,9 +14,9 @@ public class PicDeGlace extends Sort {
         setNom("Pic de Glace");
     }
 
-    public void lancerSort(Personnage personnage){
+    public void lancerSort(Personnage personnage, Magicien magicien){
         avant=personnage.getPtsVie();
-        personnage.setPtsVie(personnage.getPtsVie()-(7-personnage.getPtsDef()));
+        personnage.setPtsVie(personnage.getPtsVie()-(7-personnage.getPtsDef()+magicien.getDegat()));
         System.out.println("Le "+personnage.getNom()+" perd "+(avant-personnage.getPtsVie())+" points de vie. Il lui en reste "+personnage.getPtsVie()+"."+System.lineSeparator());
     }
 }

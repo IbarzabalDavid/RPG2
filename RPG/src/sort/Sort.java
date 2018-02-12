@@ -1,5 +1,6 @@
 package sort;
 
+import personnage.Magicien;
 import personnage.Personnage;
 
 /**
@@ -23,5 +24,5 @@ public abstract class Sort {
         this.nom = nom;
     }
 
-    public abstract void lancerSort(Personnage personnage);
+    public abstract void lancerSort(Personnage personnage, Magicien magicien);
 }

@@ -6,7 +6,7 @@ import sort.Sort;
 /**
  * Created by ibada1731710 on 2018-02-05.
  */
-public class Magicien extends Personnage {
+abstract public class Magicien extends Personnage {
     private int ptsMagie;
     private Sort[] tabSort=new Sort[2];
     int random;
@@ -32,7 +32,7 @@ public class Magicien extends Personnage {
         if ( tabSort[random].getCout()<=ptsMagie){
             ptsMagie-=tabSort[random].getCout();
             System.out.println("Il lui reste "+(getPtsMagie()+" points de magie."));
-            tabSort[random].lancerSort(personnage);
+            tabSort[random].lancerSort(personnage, this);
         }
         else {
             System.out.println("Le personnage n'a pas assez de points de Magie"+System.lineSeparator());

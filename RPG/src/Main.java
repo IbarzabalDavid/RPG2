@@ -1,6 +1,7 @@
 /**
  * Created by ibada1731710 on 2018-02-05.
  */
+import arme.*;
 import personnage.*;
 
 import java.util.Scanner;
@@ -10,9 +11,9 @@ public class Main {
 
         int choix=0;
         boolean ok=false;
+        boolean ok2=false;
         int tour=0;
-        int dommage=0;
-        int avant=0;
+        int choix2;
         boolean gameOver=false;
         Personnage[] tabJoueur= new Personnage[2];
         Scanner sc =new Scanner(System.in);
@@ -30,16 +31,128 @@ public class Main {
                 ok=true;
                 switch (choix){
                     case 1:
-                        tabJoueur[i]=new Paladin();
+                        while (!ok2){
+                            System.out.println("Quelle arme voulez-vous lui assigner");
+                            System.out.println("    1. Épée ");
+                            System.out.println("    2. Épée Magique");
+                            System.out.println("    3. Épée Lourde");
+                            System.out.println("    4. Masamune");
+                            System.out.println("Votre choix :");
+                            choix2=sc.nextInt();
+                            ok2=true;
+                            switch (choix2){
+                                case 1:
+                                    tabJoueur[i]=new Paladin(new Epee());
+                                    break;
+                                case 2:
+                                    tabJoueur[i]=new Paladin(new EpeeMagique());
+                                    break;
+                                case 3:
+                                    tabJoueur[i]=new Paladin(new EpeeLourde());
+                                    break;
+                                case 4:
+                                    tabJoueur[i]=new Paladin(new Masamune());
+                                    break;
+                                default:
+                                    System.out.println("Veuillez entrez une réponse entre 1 et 4");
+                                    ok2=false;
+                            }
+                        }
+                        ok2=false;
+
                         break;
                     case 2:
-                        tabJoueur[i]=new Barbare();
+                        while (!ok2){
+                            System.out.println("Quelle arme voulez-vous lui assigner");
+                            System.out.println("    1. Masse ");
+                            System.out.println("    2. Épée Lourde");
+                            System.out.println("    3. Sceptre");
+                            System.out.println("    4. Masamune");
+                            System.out.println("Votre choix :");
+                            choix2=sc.nextInt();
+                            ok2=true;
+                            switch (choix2){
+                                case 1:
+                                    tabJoueur[i]=new Barbare(new Masse());
+                                    break;
+                                case 2:
+                                    tabJoueur[i]=new Barbare(new EpeeLourde());
+                                    break;
+                                case 3:
+                                    tabJoueur[i]=new Barbare(new Sceptre());
+                                    break;
+                                case 4:
+                                    tabJoueur[i]=new Barbare(new Masamune());
+                                    break;
+                                default:
+                                    System.out.println("Veuillez entrez une réponse entre 1 et 4");
+                                    ok2=false;
+                            }
+                        }
+                        ok2=false;
+
                         break;
                     case 3:
-                        tabJoueur[i]=new MagicienNoir();
+                        while (!ok2){
+                            System.out.println("Quelle arme voulez-vous lui assigner");
+                            System.out.println("    1. Baguette ");
+                            System.out.println("    2. Épée Magique");
+                            System.out.println("    3. Sceptre");
+                            System.out.println("    4. Masamune");
+                            System.out.println("Votre choix :");
+                            choix2=sc.nextInt();
+                            ok2=true;
+                            switch (choix2){
+                                case 1:
+                                    tabJoueur[i]=new MagicienNoir(new Baguette());
+                                    break;
+                                case 2:
+                                    tabJoueur[i]=new MagicienNoir(new EpeeMagique());
+                                    break;
+                                case 3:
+                                    tabJoueur[i]=new MagicienNoir(new Sceptre());
+                                    break;
+                                case 4:
+                                    tabJoueur[i]=new MagicienNoir(new Masamune());
+                                    break;
+                                default:
+                                    System.out.println("Veuillez entrez une réponse entre 1 et 4");
+                                    ok2=false;
+                            }
+                        }
+                        ok2=false;
+
                         break;
                     case 4:
-                        tabJoueur[i]=new MagicienRouge();
+                        while (!ok2){
+                            System.out.println("Quelle arme voulez-vous lui assigner");
+                            System.out.println("    1. Baguette ");
+                            System.out.println("    2. Épée Magique");
+                            System.out.println("    3. Sceptre");
+                            System.out.println("    4. Masamune");
+                            System.out.println("Votre choix :");
+                            choix2=sc.nextInt();
+                            ok2=true;
+                            switch (choix2){
+                                case 1:
+                                    tabJoueur[i]=new MagicienRouge(new Baguette());
+                                    break;
+                                case 2:
+                                    tabJoueur[i]=new MagicienRouge(new EpeeMagique());
+                                    break;
+                                case 3:
+                                    tabJoueur[i]=new MagicienRouge(new Sceptre());
+                                    break;
+                                case 4:
+                                    tabJoueur[i]=new MagicienRouge(new Masamune());
+                                    break;
+                                default:
+                                    System.out.println("Veuillez entrez une réponse entre 1 et 4");
+                                    ok2=false;
+                            }
+                        }
+                        ok2=false;
+
                         break;
                     default:
                         System.out.println("Veuillez entrez une réponse entre 1 et 4");

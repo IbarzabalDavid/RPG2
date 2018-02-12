@@ -5,7 +5,7 @@ import personnage.Personnage;
 /**
  * Created by ibada1731710 on 2018-02-05.
  */
-public class Guerrier extends Personnage {
+abstract public class Guerrier extends Personnage {
 
     private int ptsForce;
     int avant;
@@ -21,7 +21,7 @@ public class Guerrier extends Personnage {
     public void attaquer(Personnage personnage){
         System.out.println("Le "+getNom()+" attaque !");
         avant=personnage.getPtsVie();
-        personnage.setPtsVie(personnage.getPtsVie()-(ptsForce*2- personnage.getPtsDef()));
+        personnage.setPtsVie(personnage.getPtsVie()-(ptsForce*2- personnage.getPtsDef()+getDegat()));
         dommage=avant-personnage.getPtsVie();
         //Verif mort
         if (personnage.getPtsVie()<=0){
